@@ -1,0 +1,21 @@
+
+.button 	{ font-family: Arial, sans-serif; color: #FFFFFF; font-weight: bold; font-size: 16px; background-color: #0D67D2; }
+
+.feedback	{ font-family: Arial, sans-serif; color: #333333; font-weight: normal; font-size: 14px; }
+
+.question	{ font-family: Arial, sans-serif; color: #333333; font-weight: normal; font-size: 12px; }
+
+.option		{ font-family: Arial, sans-serif; color: #333333; font-weight: normal; font-size: 12px; }
+
+.slideText 	{ font-family: Arial; color: #0D67D2; font-weight: normal; font-size: 24px; text-align: center; }
+
+.caption 	{ font-family: Arial; color: #333333; font-weight: normal; font-size: 11px; font-style: italic; text-align: center; }
+
+.pageTitle	{ font-family: Arial; color: #0D67D2; font-weight: bold; font-size: 24px; text-align: center; }
+
+.instructions{ font-family: Arial; color: #333333; font-weight: bold; font-size: 14px; text-align: center; }
+
+.title		{ font-family: Arial; color: #0D67D2; font-weight: bold; font-size: 20px; text-align: center; }
+.target		{ background-color: #0982AD; }
+
+.text		{ font-family: Arial; color: #333333; font-weight: normal; font-size: 14px; text-align: left; }

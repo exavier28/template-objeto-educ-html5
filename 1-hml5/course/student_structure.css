@@ -1,0 +1,1592 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+body [onunload="unload_CVF()"] {
+  min-height: 600px;
+  min-width: 800px;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  behavior: url("pngbehavior.htc");
+  border-style: none;
+  height: auto;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0;
+  width: auto;
+}
+
+/* 800x600 template */
+.small iframe {
+  margin-top: 5px;
+}
+
+#waterMark {
+  height: 0;
+  width: 0;
+}
+
+object#cacheflash {
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
+/* navigational and theme elements */
+.nav {
+  height: 80px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.nav .logo {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.nav .button {
+  float: right;
+}
+
+.nav .button img {
+  margin-right: 10px;
+  padding: 0;
+}
+
+.pageTitle {
+  float: left;
+  margin: 50px 0 0 10px;
+}
+
+.infoBar {
+  height: 19px;
+  line-height: 19px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.infoBar .pageNum {
+  float: right;
+  display: inline;
+  margin-right: 10px;
+}
+
+.infoBar .breadCrumb {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+}
+
+.contentBody {
+  background-position: 0 -20px;
+  text-align: left;
+}
+
+.launchBox {
+  position: relative;
+  margin: 10px auto;
+  padding: 0;
+  width: 500px;
+  height: auto;
+}
+
+.launchBox .nav {
+  margin-bottom: 10px;
+}
+
+.launchBox .textHeadline {
+  margin: 0 10px 10px;
+}
+
+.launchBox p {
+  margin: 0 10px 10px;
+}
+
+.launchBtn {
+  margin: 0 10px 10px;
+}
+
+.footer {
+  margin: 10px auto;
+  text-align: center;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9px;
+}
+
+/* import css3 mixin's */
+/* objects */
+.editPanel {
+  position: absolute;
+  visibility: hidden;
+  z-index: 1;
+  padding: 5px;
+  width: auto;
+  top: 30px;
+  border: solid 1px #666;
+  background-color: #FFF;
+}
+
+.editPanel p {
+  margin: 0 0 5px 0;
+}
+
+.caption {
+  position: relative;
+  height: 15px;
+  line-height: 15px;
+}
+
+.caption .editPanel {
+  z-index: 20;
+  top: -52px !important;
+}
+
+.image {
+  position: absolute;
+  text-align: center;
+}
+
+.image img {
+  margin: 0 auto;
+}
+
+.media {
+  text-align: center;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.title {
+  margin: 0 0 .5em;
+}
+
+/* begin panel layout */
+#panel,
+.panel {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 6px #999999;
+  -moz-box-shadow: 2px 2px 6px #999999;
+  box-shadow: 2px 2px 6px #999999;
+  background-color: #fff;
+  border: 2px solid #999;
+  left: 0;
+  margin: 0 auto;
+  min-height: 20%;
+  right: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  width: 50%;
+  z-index: 5000;
+}
+#panel .close-btn,
+.panel .close-btn {
+  background-image: url(close-btn-bg.gif);
+  float: right;
+  height: 17px;
+  width: 17px;
+}
+#panel .instructions, #panel .feedback,
+.panel .instructions,
+.panel .feedback {
+  clear: right;
+  margin-bottom: 1.5em;
+}
+#panel .button,
+.panel .button {
+  margin: 0 auto;
+  text-align: center;
+  width: 30%;
+}
+#panel .text,
+.panel .text {
+  position: relative;
+}
+
+/* end panel layout */
+/* begin button layout */
+#advanced .button,
+#assessment .button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+#advanced .button a,
+#assessment .button a {
+  background-color: inherit;
+  background-image: url(assessment_button_bg.png);
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  display: block;
+  color: inherit;
+  margin: 1px;
+  padding: 5px 7px;
+  text-decoration: none;
+}
+#advanced .button a:hover,
+#assessment .button a:hover {
+  background-position: left top;
+}
+#advanced .button.disabled, #advanced .button.disabled a, #advanced .button.disabled a:hover,
+#assessment .button.disabled,
+#assessment .button.disabled a,
+#assessment .button.disabled a:hover {
+  background-color: #CCC;
+  background-position: left bottom;
+  cursor: default;
+}
+#advanced .button.play, #advanced .button.pause,
+#assessment .button.play,
+#assessment .button.pause {
+  width: 40px;
+}
+#advanced .button.play a, #advanced .button.pause a,
+#assessment .button.play a,
+#assessment .button.pause a {
+  background-image: url(assessment_button_bg.png), url(playpause_bg.png);
+  background-position: left bottom, center 5px;
+  background-repeat: repeat-x, no-repeat;
+}
+#advanced .button.play a span, #advanced .button.pause a span,
+#assessment .button.play a span,
+#assessment .button.pause a span {
+  visibility: hidden;
+}
+#advanced .button.pause a,
+#assessment .button.pause a {
+  background-position: left bottom, center -35px;
+}
+#advanced .button.play a:hover,
+#assessment .button.play a:hover {
+  background-position: left top, center 5px;
+}
+#advanced .button.pause a:hover,
+#assessment .button.pause a:hover {
+  background-position: left top, center -35px;
+}
+
+.text {
+  position: absolute;
+  overflow: auto;
+}
+
+ul, ol {
+  margin: 10px 0;
+  padding-left: 10px;
+  list-style-position: outside;
+}
+
+ol {
+  padding-left: 25px;
+}
+
+ul {
+  list-style-type: square;
+}
+
+li {
+  margin: 0 0 5px 10px;
+}
+
+.text .textHeadline {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.text .textContent {
+  position: relative;
+}
+
+.infoLinksBox {
+  position: absolute;
+  overflow: auto;
+}
+
+.infoLinksBox .text {
+  position: relative;
+  padding-bottom: 10px;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.infoLinksBox .text .editPanel {
+  top: 20px;
+}
+
+.infoLinksBox .infoLinks {
+  position: relative;
+  margin-top: 5px;
+  border-top: solid 1px #333;
+}
+
+.infoEmbed {
+  position: absolute;
+  overflow: auto;
+}
+
+.moreInfo {
+  background-attachment: fixed;
+}
+
+.jumpPanel {
+  position: absolute;
+  overflow: hidden;
+}
+
+.jumpTo {
+  position: relative;
+  display: inline;
+  float: left;
+  overflow: visible;
+}
+
+.screenName {
+  display: inline !important;
+}
+
+.jumpToLink {
+  display: block;
+}
+
+.contentBox, .contentBox2 {
+  position: relative;
+  margin: 10px;
+  padding: 5px 5px 8px 0;
+  width: auto;
+  height: auto;
+  border: solid 1px #666;
+  background-color: #FFF;
+}
+
+.glossaryItem {
+  padding-left: 18px;
+  margin-top: 3px;
+}
+
+.group, .screen {
+  clear: left;
+  padding-left: 10px;
+  min-height: 22px;
+}
+
+.group {
+  margin-bottom: 3px;
+  height: auto !important;
+  height: 22px;
+}
+
+.group img, .screen img {
+  float: left;
+}
+
+.group a, .group span, .screen a {
+  float: left;
+  margin: 3px 0 0 3px;
+}
+
+body.contentBody {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0;
+}
+body.contentBody.moreInfo {
+  margin: 0;
+  width: 100%;
+}
+
+form#StudentView {
+  height: 100%;
+}
+form#StudentView div[align="center"] {
+  margin: 1% 0 0;
+  height: 80%;
+  overflow: hidden;
+}
+@media all and (max-height: 699px) {
+  form#StudentView div[align="center"] {
+    height: 77%;
+    overflow: hidden;
+  }
+}
+form#StudentView iframe {
+  height: 100%;
+  width: 100%;
+}
+
+/* position */
+.left {
+  left: 0;
+  margin: 0;
+}
+
+.right {
+  right: 0;
+  margin: 0;
+}
+
+.top {
+  top: 0;
+  margin: 0;
+}
+
+.bottom {
+  bottom: 0;
+  margin: 0;
+}
+
+/* 1024x768 sizes */
+.fullWidth {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+}
+.fullWidth .editPanel {
+  left: 340px;
+}
+
+.fullWidth .caption .editPanel {
+  left: 410px;
+}
+
+.imageHalfWidth {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 48%;
+}
+.imageHalfWidth .editPanel {
+  left: 114px;
+}
+
+.imageHalfWidth .caption .editPanel {
+  left: 184px;
+}
+
+.moreInfo .imageHalfWidth {
+  margin: 0;
+  width: 100%;
+}
+
+.moreInfo .imageHalfWidth .editPanel {
+  left: 122px;
+}
+
+.moreInfo .imageHalfWidth .caption .editPanel {
+  left: 192px;
+}
+
+.textHalfWidth {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 48%;
+}
+
+.textHalfWidth .editPanel {
+  left: 106px;
+}
+
+.moreInfo .textHalfWidth {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+}
+
+.moreInfo .textHalfWidth .editPanel {
+  left: 116px;
+}
+.moreInfo .largeContent {
+    width:100%
+}
+
+
+.infoLinksBoxWidth {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 48%;
+}
+
+.infoLinksBoxWidth.largeContent {
+        width: 35%;
+    }
+
+
+.infoLinksBoxWidth .editPanel {
+  left: 90px;
+}
+
+.infoEmbedWidth {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 48%;
+}
+
+.infoEmbedWidth.largeContent{
+    width: 63%;
+}
+
+.fullHeight {
+  height: 99%;
+  margin-top: 1%;
+}
+
+.halfHeight {
+  height: 48%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.imageRegHeight {
+  height: 60%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.imageLargeHeight {
+  height: 68%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.moreInfo .imageLargeHeight {
+  height: 75%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.textShortHeight {
+  height: 28%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.minus1Row,
+.minus1JumpRow {
+  height: 81%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.minus2JumpRow {
+  height: 68%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.singleJumpRow {
+  height: 13%;
+  margin: 1% 0 0;
+  width: 100%;
+}
+.singleJumpRow .jumpTo {
+  height: 80%;
+}
+
+.doubleJumpRow {
+  height: 26%;
+  margin: 1% 0 0;
+  width: 100%;
+}
+.doubleJumpRow .jumpTo {
+  height: 30%;
+}
+
+.jumpTo {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 48%;
+  margin-bottom: 2%;
+  margin: 0 1% 1%;
+}
+.jumpTo .editPanel {
+  left: 10px;
+  top: -5px;
+}
+.jumpTo div {
+  height: 100%;
+  width: 100%;
+}
+.jumpTo .jumpToLink {
+  height: 96%;
+  padding: 1%;
+  width: 98%;
+}
+
+.narrowJump {
+  width: 290px;
+}
+
+.narrowJump .jumpToLink {
+  width: 290px;
+}
+
+.full {
+  height: 100%;
+  width: 100%;
+}
+.full object,
+.full embed {
+  height: 99%;
+  width: 100%;
+}
+
+/* begin common assessment structure */
+#assessment {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 99%;
+  position: relative;
+}
+#assessment.record {
+  height: 80%;
+}
+
+#buttonrow {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  bottom: 0;
+  height: auto;
+  left: 0;
+  position: absolute;
+}
+#buttonrow #instructBtn {
+  float: left;
+}
+#buttonrow #checkBtn {
+  float: right;
+}
+#buttonrow #showBtn {
+  margin-left: 1%;
+  float: right;
+}
+
+/* background - for catching 'drag and drop' cancels */
+#bg {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+/* begin image layout */
+.media {
+  /* begin template specific layout */
+}
+.media.full {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  height: 98%;
+  margin-bottom: 1%;
+}
+.media.large {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  height: 80%;
+  margin-bottom: 1%;
+}
+.media.medium {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 39.66667%;
+  height: 60%;
+  margin-bottom: 1%;
+}
+
+.msaudioimage #media1 {
+  top: 60px;
+}
+
+/* end image layout */
+/* begin question/options layout */
+#questionOptions {
+  text-align: left;
+}
+
+.question, .option {
+  margin-bottom: 10px;
+}
+
+.option a.correct,
+.option a.incorrect,
+.option a.disabled {
+  cursor: default;
+}
+
+.option p {
+  margin-top: 0;
+}
+
+.audioControl {
+  text-align: center;
+}
+.audioControl .audio {
+  margin-left: 6px;
+}
+.audioControl .text {
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+/* begin template specific layout */
+/* begin template specific layout */
+.multiplechoice .option a {
+  background: transparent url(option-bg.png) no-repeat -334px -5px;
+  color: inherit;
+  display: block;
+  min-height: 21px;
+  padding-left: 30px;
+  text-decoration: inherit;
+}
+.multiplechoice .option a.active:hover {
+  background-position: -304px -35px;
+}
+.multiplechoice .option a.selected {
+  background-position: -274px -65px;
+}
+.multiplechoice .option a.disabled {
+  background-position: -184px -155px;
+}
+.multiplechoice .option a.correct {
+  background-position: -244px -95px;
+}
+.multiplechoice .option a.incorrect {
+  background-position: -214px -125px;
+}
+.multiplechoice .audioControl {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 39.66667%;
+  clear: left;
+  height: 10%;
+  margin-bottom: 1%;
+}
+.multiplechoice.mc6optionsimage #questionOptions, .multiplechoice.mc4optionsimageaudio #questionOptions {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 56.33333%;
+  margin-bottom: 1%;
+  height: 80%;
+}
+.multiplechoice.mc4optionsimageaudio #questionOptions {
+  float: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.multiplechoice.mc8options #questionOptions {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+}
+.multiplechoice.mc8options .question {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+}
+.multiplechoice.mc8options .option {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 48%;
+}
+.multiplechoice.mc4audioimage #questionOptions {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+}
+.multiplechoice.mc4audioimage .option {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 14.66667%;
+  position: relative;
+  left: 16.66667%;
+}
+.multiplechoice.mc4audioimage .option .button {
+  margin: 0 !important;
+}
+.multiplechoice.mc4audioimage .option > a {
+  float: left;
+}
+
+.mediaselect #questionOptions {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  clear: both;
+  margin-bottom: 1%;
+  height: 80%;
+  text-align: center;
+}
+.mediaselect .option {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 23%;
+}
+.mediaselect .option a img {
+  border: 2px solid #FFF;
+}
+.mediaselect .option a.selected img,
+.mediaselect .option a:hover img {
+  border-color: #333;
+}
+.mediaselect .option a.correct img {
+  border-color: #090;
+}
+.mediaselect .option a.incorrect img {
+  border-color: #F00;
+}
+.mediaselect .option a.disabled img {
+  border-color: #FFF;
+  opacity: 0.5;
+}
+.mediaselect .audioControl {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 10%;
+  margin-bottom: 1%;
+}
+.mediaselect.ms4image .option {
+  margin-top: 10%;
+}
+.mediaselect.ms4image .option img {
+  margin-bottom: 10px;
+}
+
+.dragndrop {
+  position: relative;
+}
+.dragndrop #questionOptions {
+  height: 0%;
+}
+.dragndrop #questionOptions .option {
+  position: absolute;
+  display: none;
+}
+.dragndrop #questionOptions .option a {
+  background: transparent url(option-bg.png) no-repeat -330px -330px;
+  display: block;
+  height: 18px;
+  margin-left: -24px;
+  position: absolute;
+  width: 24px;
+  z-index: -100;
+}
+.dragndrop #questionOptions .option a.correct {
+  background-position: -34px -306px;
+}
+.dragndrop #questionOptions .option a.incorrect {
+  background-position: -4px -336px;
+}
+.dragndrop #questionOptions .option .drop {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #ddd;
+  height: 100%;
+  width: 100%;
+}
+.dragndrop #dragOptions {
+  height: 0%;
+}
+.dragndrop #dragOptions .button {
+  display: none;
+  position: absolute;
+}
+.dragndrop #dragOptions .button a {
+  display: block;
+  height: 100%;
+  line-height: 120%;
+  padding: 0;
+  vertical-align:middle;
+}
+.dragndrop #dragOptions .button.selected a {
+  background-position: left top;
+}
+.dragndrop.dd8options #questionOptions .option {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 48%;
+  height: 8%;
+  left: 50%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 1px;
+}
+.dragndrop.dd8options #dragOptions .button {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 48%;
+  position: absolute;
+  height: 8%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.dragndrop.dd5phrases5false #questionOptions .option {
+  height: 8%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 100%;
+}
+.dragndrop.dd5phrases5false #questionOptions .option a {
+  margin-left: 19%;
+}
+.dragndrop.dd5phrases5false #questionOptions .option .drop {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 18%;
+}
+.dragndrop.dd5phrases5false #dragOptions {
+  border-bottom: 1px solid #CCC;
+  height: 21.5%;
+}
+.dragndrop.dd5phrases5false #dragOptions .button {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 18%;
+  height: 8%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.dragndrop.dd8images2false #questionOptions .option, .dragndrop.dd4images4false #questionOptions .option {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 23%;
+  height: 32%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: center;
+}
+.dragndrop.dd8images2false #questionOptions .option a, .dragndrop.dd4images4false #questionOptions .option a {
+  margin-left: 0;
+  top: 30%;
+}
+.dragndrop.dd8images2false #questionOptions .option img, .dragndrop.dd4images4false #questionOptions .option img {
+  max-height: 72%;
+}
+.dragndrop.dd8images2false #questionOptions .option .drop, .dragndrop.dd4images4false #questionOptions .option .drop {
+  height: 24%;
+  margin-bottom: 3%;
+}
+.dragndrop.dd8images2false #dragOptions, .dragndrop.dd4images4false #dragOptions {
+  border-bottom: 1px solid #CCC;
+  height: 21.5%;
+}
+.dragndrop.dd8images2false #dragOptions .button, .dragndrop.dd4images4false #dragOptions .button {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 18%;
+  height: 8%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.dragndrop.dd4images4false #dragOptions .button {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 23%;
+}
+.dragndrop.dd8images2false #questionOptions .option .drop {
+  margin: 0 auto 3%;
+  width: 78.26086956521739%;
+}
+.dragndrop.dd8images2false #dragOptions .button {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 18%;
+}
+.dragndrop.dd8images2false #dragOptions .button.dragged {
+  margin-left: 3.5%;
+}
+
+.dragnsort #questionOptions {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 90%;
+  text-align: center;
+  top: 0;
+}
+.dragnsort #questionOptions .option {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 23%;
+  float: left;
+  height: 48%;
+  margin-bottom: 2%;
+  text-align: center;
+}
+.dragnsort #questionOptions .option img {
+  border: 2px solid #FFF;
+  max-height: 80%;
+}
+.dragnsort #questionOptions .option .button {
+  height: 20%;
+}
+.dragnsort #questionOptions .option .button a {
+  display: block;
+  height: 100%;
+  line-height: 200%;
+  padding: 0;
+}
+.dragnsort #questionOptions .active img {
+  border-color: #333;
+}
+.dragnsort #questionOptions .active .button a {
+  background-position: left top;
+}
+.dragnsort #questionOptions .correct img {
+  border-color: #090;
+}
+.dragnsort #questionOptions .incorrect img {
+  border-color: #F00;
+}
+
+.areaselect #questionOptions,
+.areaselect #media1.full {
+  display: block;
+  float: none;
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: 76.57657657657658%;
+  margin: 1% auto;
+}
+.areaselect #media1 img {
+  max-height: none;
+  max-width: none;
+}
+.areaselect .option {
+  height: 24px;
+  position: absolute;
+  width: 26px;
+}
+.areaselect .option a {
+  background: transparent url(option-bg.png) no-repeat -152px -183px;
+  height: 24px;
+  position: absolute;
+  width: 26px;
+  overflow: visible;
+}
+.areaselect .option a:hover {
+  background-position: -122px -213px;
+}
+.areaselect .option a.correct {
+  background-position: -92px -243px;
+}
+.areaselect .option a.incorrect {
+  background-position: -62px -273px;
+}
+.areaselect .option.disabled {
+  display: none;
+}
+.areaselect .target {
+  background-color: transparent;
+  position: absolute;
+}
+.areaselect .target.show {
+  border: #06C 2px solid;
+}
+
+#record {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  clear: both;
+  margin-bottom: 1%;
+  height: 16%;
+  margin-top: 1%;
+  text-align: center;
+}
+
+/* advanced styles */
+/* general styles */
+#advanced {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 99%;
+  margin-top: 1%;
+  position: relative;
+}
+#advanced .pageTitle {
+  float: none;
+  margin: auto;
+}
+#advanced .screen {
+  display: none;
+}
+#advanced .screen .media {
+  position: relative;
+}
+#advanced li.screen.text {
+  list-style: none;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+}
+#advanced.jumpto {
+  height: 70%;
+}
+#advanced.jumpto .screen {
+  margin-top: 0;
+}
+
+/* begin template specific layout */
+.imagerollover .screen {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  clear: none;
+  height: auto;
+  margin-top: 5%;
+  padding: 0;
+  overflow: hidden;
+}
+.imagerollover .screen .media {
+  height: 90%;
+  width: 100%;
+}
+.imagerollover .screen img {
+  float: none;
+}
+.imagerollover .screen.screen2 {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 48%;
+}
+.imagerollover .screen.screen3 {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 31.33333%;
+}
+.imagerollover .screen.screen4 {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 23%;
+}
+.imagerollover .screen.screen5 {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 18%;
+}
+.imagerollover .screen.screen6 {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 14.66667%;
+}
+.imagerollover .screen.screen7 {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 12.28571%;
+}
+.imagerollover .screen.screen8 {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 10.5%;
+}
+.imagerollover .screen .panel {
+  display: none;
+}
+.imagerollover .screen .panel.top, .imagerollover .screen .panel.middle, .imagerollover .screen .panel.bottom {
+  margin: 0;
+}
+.imagerollover .screen .panel.top {
+  top: 1%;
+}
+.imagerollover .screen .panel.middle {
+  top: 50%;
+}
+.imagerollover .screen .panel.bottom {
+  bottom: 1%;
+}
+.imagerollover .screen .panel.left {
+  left: 1%;
+  right: auto;
+}
+.imagerollover .screen .panel.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.imagerollover .screen .panel.right {
+  left: auto;
+  right: 1%;
+}
+.imagerollover.jumpto .screen {
+  height: 85%;
+}
+
+.targetrollover #targets,
+.targetrollover #media1 {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  position: absolute;
+  height: 70.132132%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 20%;
+  bottom: auto;
+}
+.targetrollover #media1 img {
+  max-height: none;
+  max-width: none;
+}
+.targetrollover .target {
+  position: absolute;
+  background-color: rgba(9, 130, 173, 0.33);
+  border: 1px solid #0982AD;
+}
+.targetrollover .panel {
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  display: none;
+}
+.targetrollover .panel .top, .targetrollover .panel.middle, .targetrollover .panel.bottom {
+  margin: 0;
+}
+.targetrollover .panel.top {
+  bottom: 0;
+}
+.targetrollover .panel.middle {
+  top: 50%;
+}
+.targetrollover .panel.bottom {
+  top: 0;
+}
+.targetrollover .panel.left {
+  right: 100%;
+}
+.targetrollover .panel.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.targetrollover .panel.right {
+  left: 100%;
+}
+.targetrollover.jumpTo #targets,
+.targetrollover.jumpTo #media1 {
+  height: 320px;
+  width: 640px;
+  left: 130px;
+}
+
+.slideshow .screen {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 0;
+}
+.slideshow .screen h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.slideshow .screen .media {
+  height: 90%;
+  margin: 0;
+}
+.slideshow .screen .media img {
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  float: none;
+}
+.slideshow .screen p.caption {
+  margin: 0;
+}
+.slideshow.jumpto .screen {
+  height: 85%;
+}
+.slideshow #controls {
+  background-color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 2%;
+  height: 70px;
+  width: 340px;
+  box-shadow: 2px 2px 6px #999;
+  -moz-box-shadow: 2px 2px 6px #999;
+  -webkit-box-shadow: 2px 2px 6px #999;
+  border-radius: 6px;
+}
+.slideshow #controls .status {
+  font: normal normal normal 24px/50px Arial, sans-serif;
+  float: right;
+  margin: 10px;
+}
+.slideshow #controls .button {
+  display: block;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  height: 50px;
+  width: 70px;
+}
+.slideshow #controls .button a {
+  display: block;
+  margin: 1px;
+  padding: 0;
+  height: 48px;
+  width: 68px;
+}
+.slideshow #controls .button a span {
+  visibility: hidden;
+}
+.slideshow #controls .play a {
+  background-position: center 15px;
+  background-position: left bottom, center 15px;
+}
+.slideshow #controls .pause a {
+  background-position: center -25px;
+  background-position: left bottom, center -25px;
+}
+.slideshow #controls .play a:hover {
+  background-position: center 15px;
+  background-position: left top, center 15px;
+}
+.slideshow #controls .pause a:hover {
+  background-position: center -25px;
+  background-position: left top, center -25px;
+}
+.slideshow #controls .previous a,
+.slideshow #controls .next a {
+  background-image: url(playpause_bg.png);
+  background-image: url(assessment_button_bg.png), url(playpause_bg.png);
+  background-position: center 5px;
+  background-position: left bottom, center 5px;
+  background-repeat: no-repeat;
+  background-repeat: repeat-x, no-repeat;
+}
+.slideshow #controls .previous a {
+  background-position: center -72px;
+  background-position: left bottom, center -72px;
+}
+.slideshow #controls .next a {
+  background-position: center -128px;
+  background-position: left bottom, center -128px;
+}
+.slideshow #controls .previous a:hover {
+  background-position: center -72px;
+  background-position: left top, center -72px;
+}
+.slideshow #controls .next a:hover {
+  background-position: center -128px;
+  background-position: left top, center -128px;
+}
+.slideshow #controls .previous {
+  left: 10px;
+}
+.slideshow #controls .pause,
+.slideshow #controls .play {
+  left: 90px;
+}
+.slideshow #controls .next {
+  left: 170px;
+}
+.slideshow #controls .play,
+.slideshow #controls .previous {
+  display: none;
+}
+
+#advanced.slideshow .screen:first-child {
+  display: block;
+}
+
+
+
+
+/*Narration play control*/
+div.jp-audio
+{
+	position:absolute;
+	top: 10px; 
+	left: 20px;
+	width:50px;	
+    filter:alpha(opacity=30); 
+	opacity:0.3;	
+}
+
+div.jp-interface {
+	position:absolute; top: 10px; right: 15px;
+	width:100%;
+}
+
+div.jp-audio div.jp-type-single div.jp-interface {
+	height:50px;
+}
+
+/* @group CONTROLS */
+
+div.jp-interface ul.jp-controls {
+	list-style-type:none;
+	margin:0;
+	padding: 0;
+}
+
+div.jp-audio ul.jp-controls {
+	width: 50px;
+	padding:0px 0px 0px 0px;
+}
+
+div.jp-interface ul.jp-controls a {
+	display:block;
+	overflow:hidden;
+	text-indent:-9999px;
+}
+a.jp-play,
+a.jp-pause {
+	width:50px;
+	height:50px;
+}
+
+a.jp-play {
+	background: url("playbutton.png");
+
+}
+a.jp-play:hover {
+	background: url("playbutton.png");
+}
+a.jp-pause {
+	background: url("");
+	display: none;
+}
+a.jp-pause:hover {
+	background: url("");
+}
+
+div.jp-jplayer audio,
+div.jp-jplayer {
+	position:absolute; top: 10px; left: 20px;
+	width:50px;
+	height:50px;
+	visibility: hidden;
+}
+
+/* Narrator play control @end */

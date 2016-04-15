@@ -1,0 +1,16 @@
+
+body					{ background: #FFF url(content_bg.gif) 0 99px repeat-x; }
+
+
+.contentBody			{ background-position: 0 -20px; }
+
+
+.nav					{ background: #FFF url(nav_bg.gif) repeat-x; }
+
+	.nav .logo				{ margin: 5px; }
+		
+		
+.infoBar				{ background: #FFF url(infobar_bg.gif); }
+
+
+.launchBox				{ background-color: #FFF; border: 1px solid #999; }

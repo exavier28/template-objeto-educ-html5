@@ -1,0 +1,38 @@
+body {
+background:#FFF url(content_bg.gif) 0 99px repeat-x;
+}
+
+.nav {
+background:#FFF url(nav_bg.gif) repeat-x;
+}
+
+/* update these numbers to adjust the spacing around your logo */
+.nav .logo {
+margin-top:5px;
+margin-left:20px;
+margin-bottom:0px;
+margin-right:0px;
+}
+
+/* update these numbers to adjust the spacing around the buttons */
+.nav .button {
+margin-top:5px;
+margin-left:0px;
+margin-bottom:0px;
+margin-right:15px;
+}
+
+/* to remove the background image and use the background color you selected in 'Step 3: Text Styles' replace "background-image:url(infobar_bg.gif);" with "background-image:none;" */
+
+.infoBar {
+background-image:url(infobar_bg.gif);
+}
+
+.mute, .resources, .exit, .refresh {
+display:none;
+}
+
+.footer .myUdutu {
+display:none;
+}
+

@@ -1,0 +1,263 @@
+.infoBar {
+font-family:Arial, sans-serif;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+font-style:normal;
+text-decoration:none;
+text-align:left;
+background-color:#F05E22;
+}
+
+.caption {
+font-family:Arial, sans-serif;
+color:#333333;
+font-size:11px;
+font-weight:normal;
+font-style:italic;
+text-decoration:none;
+text-align:center;
+background-color:Transparent;
+}
+
+.text, .text table {
+font-family:Arial, sans-serif;
+color:#333333;
+font-size:14px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+text-align:left;
+background-color:Transparent;
+}
+
+.text a {
+font-family:Arial, sans-serif;
+color:#F05E22;
+font-size:14px;
+font-weight:normal;
+font-style:normal;
+text-decoration:underline;
+text-align:left;
+background-color:Transparent;
+}
+
+.text a:visited {
+font-family:Arial, sans-serif;
+color:#F05E22;
+font-size:14px;
+font-weight:normal;
+font-style:normal;
+text-decoration:underline;
+text-align:left;
+background-color:Transparent;
+}
+
+.text a:hover {
+font-family:Arial, sans-serif;
+color:#FFFFFF;
+font-size:14px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+text-align:left;
+background-color:#F05E22;
+}
+
+.textHeadline {
+font-family:Arial, sans-serif;
+color:#F05E22;
+font-size:17px;
+font-weight:bold;
+font-style:normal;
+text-decoration:none;
+text-align:left;
+background-color:Transparent;
+}
+
+.contentBox {
+font-family:Arial, sans-serif;
+color:#333333;
+font-size:14px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+text-align:left;
+background-color:#FFFFFF;
+}
+
+.info {
+font-family:Arial, sans-serif;
+color:#333333;
+font-size:12px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+text-align:center;
+background-color:Transparent;
+}
+
+.groupTitle {
+font-family:Arial, sans-serif;
+color:#666666;
+font-size:12px;
+font-weight:bold;
+font-style:normal;
+text-decoration:none;
+text-align:left;
+background-color:Transparent;
+}
+
+.glossWord {
+font-family:Arial, sans-serif;
+color:#F05E22;
+font-size:12px;
+font-weight:bold;
+font-style:normal;
+text-decoration:none;
+text-align:left;
+background-color:Transparent;
+}
+
+.glossDescrip {
+font-family:Arial, sans-serif;
+color:#333333;
+font-size:12px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+text-align:left;
+background-color:Transparent;
+}
+
+.infoLinks {
+font-family:Arial, sans-serif;
+color:#333333;
+font-size:11px;
+font-weight:normal;
+font-style:italic;
+text-decoration:none;
+text-align:left;
+background-color:Transparent;
+}
+
+.milink a {
+font-family:Arial, sans-serif;
+color:#F05E22;
+font-size:11px;
+font-weight:normal;
+font-style:normal;
+text-decoration:underline;
+text-align:left;
+background-color:Transparent;
+}
+
+.milink a:visited {
+font-family:Arial, sans-serif;
+color:#F05E22;
+font-size:11px;
+font-weight:normal;
+font-style:normal;
+text-decoration:underline;
+text-align:left;
+background-color:Transparent;
+}
+
+.milink a:hover {
+font-family:Arial, sans-serif;
+color:#FFFFFF;
+font-size:11px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+text-align:left;
+background-color:#F05E22;
+}
+
+.jumpTo a {
+font-family:Arial, sans-serif;
+color:#FFFFFF;
+font-size:12px;
+font-weight:bold;
+font-style:normal;
+text-decoration:underline;
+text-align:center;
+background-color:#F05E22;
+}
+
+.jumpTo a:visited {
+font-family:Arial, sans-serif;
+color:#FFFFFF;
+font-size:12px;
+font-weight:bold;
+font-style:normal;
+text-decoration:underline;
+text-align:center;
+background-color:#F05E22;
+}
+
+.jumpTo a:hover {
+font-family:Arial, sans-serif;
+color:#FFFFFF;
+font-size:12px;
+font-weight:bold;
+font-style:normal;
+text-decoration:none;
+text-align:center;
+background-color:#0D67D2;
+}
+
+.editPanel {
+font-family:Arial, sans-serif;
+color:#333333;
+font-size:11px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+text-align:center;
+background-color:#FFFFFF;
+}
+
+.standard-btn a {
+font-family:Arial, sans-serif;
+color:#333333;
+font-size:11px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+text-align:center;
+background-color:Transparent;
+}
+
+.standard-btn a:visited {
+font-family:Arial, sans-serif;
+color:#333333;
+font-size:11px;
+font-weight:normal;
+font-style:normal;
+text-decoration:none;
+text-align:center;
+background-color:Transparent;
+}
+
+.standard-btn a:hover {
+font-family:Arial, sans-serif;
+color:#333333;
+font-size:11px;
+font-weight:normal;
+font-style:normal;
+text-decoration:underline;
+text-align:center;
+background-color:Transparent;
+}
+
+.launchBox {
+background-color:#FFF;
+}
+
+a.skip {
+position:absolute;
+left:-1000em;
+width:20em;
+}
+

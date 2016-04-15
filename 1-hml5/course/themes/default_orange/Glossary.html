@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Glossary</title>
+    <meta name="GENERATOR" Content="Microsoft Visual Studio 7.0" />
+    <meta name="CODE_LANGUAGE" Content="C#" />
+    <meta name="vs_defaultClientScript" content="JavaScript" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <link href="../../student_structure.css" rel="stylesheet" type="text/css" />
+    <link href="student_structure.css" rel="stylesheet" type="text/css" />
+    <link href="student_text.css" rel="stylesheet" type="text/css" />
+    <link href="student_options.css" rel="stylesheet" type="text/css" />
+    <link href="student_advanced.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src='../../utility.js'></script>
+    <script type="text/javascript" src='../../glossary.js'></script>
+    <style>img {behavior:url('../../pngbehavior.htc');}</style>
+    <script type="text/javascript" language="javascript">
+        function LoadGlossaryData()
+        {
+            if(CVF_API.gblGlossary.length == 0)
+            {
+                document.getElementById("glossaryDb").setAttribute("src",CVF_API.gblGlossaryDBLocation);
+            }
+            else
+            {
+                GlossaryJSDone();
+            }
+        }
+        
+        function GlossaryJSDone()
+        {
+            InitializeGlossary();
+        }
+    </script>
+</head>
+<body onLoad="LoadGlossaryData()">
+    <form name="CourseGlossary" method="post" id="CourseGlossary">
+	    <div class="nav">
+		    <img src="logo.jpg" alt="logo" class="logo" />
+		    <img src="glossary_title.png" alt="Course Map" class="pageTitle" />
+		</div>
+	    <div class="infoBar">
+		    <div class="breadCrumb"><span id="lblCurrentCourse"></span></div>
+	    </div>
+	    <div class="contentBox">
+		    <div id="spnContent" class="content"> </div>
+            <iframe id="glossaryDb" width="0" height="0" style="visibility:hidden;"></iframe>
+		</div>
+	</form>
+</body>
+</html>

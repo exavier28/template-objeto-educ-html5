@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<STYLES>
+
+	<!-- Order Tasks Flash Template Styles-->
+	<!-- Interface Graphic Styles -->
+	<BACKGROUND URL="Backgrounds/Krystal_Background.swf"/>
+	<FRAME_COLOR STROKE="0xFFFFFF"/>
+	<!-- Feedback Text Styles -->
+	<FEEDBACK_TXT SIZE="18" COLOR="0x000000"/>
+	<!-- Button Graphic and Text Styles -->
+	<BUTTON_TXT FACE="Arial" SIZE1="14" SIZE2="18" COLOR1="0xFFFFFF" COLOR2="0x000000"/>
+	<BUTTON_LABELS  BUTTON1="I'm Done" BUTTON2="Show Me" HELP="Help" MARK="?"/>
+	<BUTTON_COLOR FILL="0x7098C5" STROKE="0x4879AF" FILLHILIGHT="0xFFFFFF" STROKEHILIGHT="0x325378"/>
+	<!-- Image Target Styles -->
+	<IMAGE_STROKE COLOR="0x4879AF"/>
+	<TARGET_COLOR FILL="0x7098C5" SHADOW="0xCCCCCC"/>
+	<TARGET_TXT SIZE="16" COLOR="0xFFFFFF"/>
+	<!-- Choice Object Color and Text Styles -->
+	<CHOICE_COLOR FILL="0xFFFFFF" SHADOW="0xCCCCCC" STROKE="0x4879AF" CORRECT="0x00CC00" INCORRECT="0xCC0000"/>
+	<CHOICE_TXT SIZE="18" COLOR="0x325378"/>
+	
+</STYLES>

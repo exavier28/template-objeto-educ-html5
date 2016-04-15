@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My Course</title>
+    <meta content="Microsoft Visual Studio 7.0" name="GENERATOR">
+    <meta content="C#" name="CODE_LANGUAGE">
+    <meta content="JavaScript" name="vs_defaultClientScript">
+    <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+    <link href="../../student_structure.css" rel="stylesheet" type="text/css" />
+    <link href="student_structure.css" rel="stylesheet" type="text/css" />
+    <link href="student_text.css" rel="stylesheet" type="text/css" />
+    <link href="student_options.css" rel="stylesheet" type="text/css" />
+    <link href="student_advanced.css" rel="stylesheet" type="text/css" />
+    <script src="../../utility.js" ></script>
+    <script src="buttonfiles.js" ></script>
+    <script src="../../initializeNav.js"></script>
+    <!--[if lt IE 7]>
+<script src="../../ie7-core.js" type="text/javascript"></script>
+<script src="../../ie7-graphics.js" type="text/javascript"></script>
+<![endif]-->
+</head>
+<body onLoad="initializeNav();" oncontextmenu="return false;">
+    <form name="StudentView" id="StudentView">
+        <a href="#cont" accesskey="1" id="menu" class="skip">Skip Navigation Menu</a>
+	    <div class="nav">
+		    <img src="logo.jpg" alt="logo" class="logo" />
+		    <div class="button next"><a href="#" id="lnkNext"><img src="next_up.png" alt="next" id="btnNext" /></a></div>
+		    <div class="button previous"><a href="#" id="lnkPrevious"><img src="previous_up.png" alt="previous" id="btnPrevious" /></a></div>
+		    <div class="button refresh"><a href="#" id="lnkReplay"><img src="replay_up.png" alt="refresh" id="btnReplay" /></a></div>
+		    <div class="button mute"><a href="#" id="lnkMute"><img src="mute_up.png" alt="mute" id="btnMute" /></a></div>
+		    <div class="button resources"><a href="#" id="lnkResources"><img src="resources_up.png" alt="glossary"  id="btnResources" /></a></div>
+		    <div class="button glossary"><a href="#" id="lnkGlossary"><img src="glossary_up.png" alt="glossary"  id="btnGlossary" /></a></div>
+		    <div class="button courseMap"><a href="#" id="lnkCourseMap"><img src="coursemap_up.png" alt="course map" id="btnCourseMap" /></a></div>
+		    <div class="button exit"><a href="#" id="lnkExit"><img src="exit_up.png" alt="exit" id="btnExit" /></a></div>
+		    <div class="button home"><a href="#" id="lnkHome"><img src="home_up.png" alt="home" id="btnHome" /></a></div>
+	    </div>
+	    <div class="infoBar">
+		    <div class="breadCrumb"><span id="lblBreadCrumb"></span>&nbsp;-&nbsp;<span id="lblScreenName"></span></div>
+		    <div class="pageNum"><span id="lblCurrentPage">1</span> / <span id="lblLastPage">1</span></div>
+	    </div>
+	    <div align=center>
+	        <a href="#lnkNext" accesskey="2" id="cont" class="skip">Return to Navigation Menu</a>
+            <iframe id="frameScreen" allowtransparency="true" width="900" height="530" frameborder="no" scrolling="no" src="blank.html">
+            </iframe>
+	    </div>
+		<div class="footer">
+			<span class="myUdutu">powered by Udutu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<span id='spnCopyright'>Fundação Oswaldo Cruz / VPEIC</span>
+		</div>
+	</form>
+</body>
+</html>
