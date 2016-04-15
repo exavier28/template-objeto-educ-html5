@@ -1,0 +1,2 @@
+# template-objeto-educ-html5
+Para facilitar a construção de recursos educacionais abertos em formato digital que sejam compatíveis com múltiplas plataformas, dentre elas os sistemas de gestão de aprendizagens, website, desktop, celulares e dispositivos desconectados (CD/DVD/Pendrive) e ainda interoperáveis, segue alguns exemplos de templates de Objetos Digitais que podem ser utilizados como base para a construção de Recursos Educacionais Abertos.
